@@ -39,7 +39,12 @@ const Navigation = () => {
             className="text-2xl font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            CN
+            <img
+              src="/favicon.ico"
+              alt="Logo"
+              className="h-16 w-16"
+              style={{ display: 'inline-block', verticalAlign: 'middle' }}
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
