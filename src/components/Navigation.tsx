@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Menu, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import logo from '../lib/logo.png'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +41,7 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
           >
             <img
-              src="/favicon.ico"
+              src={logo}
               alt="Logo"
               className="h-16 w-16"
               style={{ display: 'inline-block', verticalAlign: 'middle' }}
@@ -63,7 +64,7 @@ const Navigation = () => {
               variant="default"
               size="sm"
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => window.open('https://drive.google.com/file/d/1KbI1z5', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1VkQYQfPie03Rj-fCd9ekEANfZrHi5Edy/view?usp=drive_link', '_blank')}
             >
               <Download className="mr-2 h-4 w-4" />
               Resume
