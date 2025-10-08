@@ -5,6 +5,8 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { useState } from "react";
 import { Toast } from "../components/ui/toast.tsx";
+import CircularText from './animations/CircularText.jsx';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -109,9 +111,15 @@ const Contact = () => {
           >
             <div className="glass-card p-8 rounded-xl">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-3xl font-bold text-primary-foreground">
-                  CN
-                </div>
+                <div className="w-24 h-24 flex items-center justify-center">
+  <CircularText
+    text="CHETAN N V*SOFTWARE DEV*"
+    onHover="goBonkers"
+    spinDuration={18}
+    className="text-primary font-black"
+  />
+</div>
+
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">
                     Chetan N V

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import ScrollVelocity from './animations/ScrollVelocity';
+import { FaStarOfLife } from 'react-icons/fa6';
 
 const Experience = () => {
   const experiences = [
@@ -17,6 +19,20 @@ const Experience = () => {
       ],
     },
     {
+      title: 'Software Developer [Freelancer]',
+      company: 'Freelancer',
+      location: 'Remote',
+      period: '2022',
+      achievements: [
+        'Collaborated effectively in a team environment with app and backend developers to deliver seamless software solutions.',
+        'Maintained codebases for real-time projects using Agile methodologies.',
+        'Translated client requirements into functional software by understanding and meeting expectations.',
+        'Designed and implemented admin/super admin panels focusing on usability and performance.',
+        'Integrated APIs using Axios and tested endpoints via Postman for reliable communication.',
+        'Worked with React, React Query, TanStack Query, Context API, Material React Table, CSS3, Bootstrap 5, and MUI to develop responsive, elegant interfaces.',
+      ],
+    },
+    {
       title: 'Frontend Developer Intern',
       company: 'Bluestock',
       location: 'Remote',
@@ -31,9 +47,24 @@ const Experience = () => {
     },
   ];
 
+  // Metric line with white stars
+  const metrics = (
+    <>
+      7 Projects Delivered
+      <FaStarOfLife className="inline mx-4 text-white/80" />
+      Happy Clients
+      <FaStarOfLife className="inline mx-4 text-white/80" />
+      Client Centric UI
+      <FaStarOfLife className="inline mx-4 text-white/80" />
+      Metrics Speaks
+      <FaStarOfLife className="inline mx-4 text-white/80" />
+    </>
+  );
+
   return (
     <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-4">
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,6 +77,7 @@ const Experience = () => {
           <p className="text-muted-foreground text-lg">Building impactful solutions</p>
         </motion.div>
 
+        {/* Experience Cards */}
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
@@ -96,9 +128,33 @@ const Experience = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Dual Scroll Velocity Section */}
+        <div className="mt-12 space-y-1 mb-0">
+          {/* Top Row - moves left */}
+          <ScrollVelocity
+            texts={[metrics]}
+            velocity={80}
+            className="text-white text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+            parallaxClassName="overflow-hidden"
+            scrollerClassName="uppercase tracking-tight"
+          />
+
+           {/* Bottom Row - m./animations/ScrollVelocity */}
+          <ScrollVelocity
+            texts={[metrics]}
+            velocity={-80}
+            className="text-white text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+            parallaxClassName="overflow-hidden"
+            scrollerClassName="uppercase tracking-tight"
+          />
+        </div>
       </div>
     </section>
   );
 };
 
 export default Experience;
+
+
+
